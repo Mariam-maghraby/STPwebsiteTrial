@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+    <title>Sign up!</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="border border-color m-5 p-5 shadow-lg back text-center">
+            <h3 class="text-center mt-5 mb-3">SIGN UP!</h3>
+            <hr>
+            <form action="http://localhost:5000/sign-up" method="post" class="needs-validation" novalidate>
+
+                <div class="from-group mb-3">
+
+                    <input type="text" class="form-control" minlength="3" required placeholder="Full Name" name="name"
+                        aria-label="Fullname"
+                        onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || (event.charCode==32)">
+
+                </div>
+
+                <div class="form-group mb-3">
+                    <input type="text" class="form-control" required placeholder="Committee" name="comt">
+                </div>
+
+                <div class="form-group mb-3">
+                    <input type="email" class="form-control" required placeholder="E-mail" name="email">
+                    <div class="valid-feedback">
+                        valid!
+                    </div>
+                    <div class="invalid-feedback">
+                        invalid!
+                    </div>
+                </div>
+
+                <div class="form-group mb-3">
+                    <input type="text" class="form-control" required placeholder="Phone No." name="phone"
+                        pattern=".{11}">
+                </div>
+
+                <div class="form-group mb-3">
+                    <input type="password" class="form-control" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
+                        minlength="6"
+                        title="please, contain at least one  number and one uppercase and lowercase letter, and at least 6"
+                        required
+                        placeholder="Password (contain at least one  number and one uppercase and lowercase letter, and at least 6)"
+                        name="pass">
+                </div>
+
+                <div class="mb-3">
+                    <label for="img-upload" class="form-label">Personal Photo</label>
+                    <input type="file" class="form-control" required placeholder="Upload a photo" name="image"
+                        accept="image/png, image/gif, image/jpeg">
+                </div>
+
+                <br>
+
+                <div class="form-group d-grid gap-2">
+                    <button type="submit" class="btn btn-primary btn-block">Register</button>
+                </div>
+            </form>
+        </div>
+        <hr>
+        Already had an account!
+        <a href="sign-in.html">login!</a>
+    </div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function () {
+            'use strict';
+            window.addEventListener('load', function () {
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                var forms = document.getElementsByClassName('needs-validation');
+                // Loop over them and prevent submission
+                var validation = Array.prototype.filter.call(forms, function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
+    </script>
+
+</body>
+
+</html>
